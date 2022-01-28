@@ -30,10 +30,33 @@ h2{
 p{
     font-size:var(--p-mobile-s);
 }
+.container{
+    position:relative;
+
+}
 
 /* navigation */
+.nav-list{
+    list-style: none;
+    position:absolute;
+    top:8vh;
+    width:100%;
+    background:white;
+    height:92vh;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    right:-100%;
+    transition:all 0.3s ease;
+}
+.nav-list.active{
+    right:0;
+}
 .hamburger{
     display: inline-flex;
+    background:white;
+    z-index:100;
     flex-direction: column;
     justify-content: right;
     align-items: flex-end;
@@ -195,6 +218,17 @@ p{
         align-items:center;
         justify-content: space-around;
         flex-basis: 50%;
+    }
+    .nav-list{
+        height:8vh;
+        top:0;
+        width:50%;
+        left:none;
+        right:-100%;
+        flex-direction: row;
+    }
+    .nav-list.active{
+        right:50px;
     }
    
 }
